@@ -1,0 +1,51 @@
+{
+  "settingsHeader": "Settings",
+  "standartClef": "Favorite clef",
+  "playbackChordOnTap": {
+    "headline": "Playback chord on tap",
+    "subline": "When tapping on the wheel"
+  },
+  "displayFourNoteChords": {
+    "headline": "Display 4-note chords",
+    "subline": "Chords will displayed with 7th"
+  },
+  "displayMinorInSmall": {
+    "headline": "Small minor chords",
+    "subline": "Display minor with small letters"
+  },
+  "germanNoteNames": {
+    "headline": "Use german note names",
+    "subline": "B will be H - Bb will be B"
+  },
+  "hapticFeedback": {
+    "headline": "Haptic Feedback",
+    "subline": ""
+  },
+  "appLanguage": {
+    "headline": "Language",
+    "subline": {
+      "en": "English",
+      "de": "Deutsch"
+    }
+  },
+  "appTheme": {
+    "headline": "Color theme",
+    "subline": {
+      "dark": "Dark color theme",
+      "light": "Light color theme"
+    }
+  },
+  "ionian": "Ionian",
+  "dorian": "Dorian",
+  "phrygian": "Phrygian",
+  "lydian": "Lydian",
+  "mixolydian": "Mixolydian",
+  "aeolian": "Aeolian",
+  "locrian": "Locrian",
+  "Harmonic Minor": "Harmonic Minor",
+  "Melodic Minor": "Melodic Minor",
+  "Minor": "Minor",
+  "Major": "Major",
+  "Diminished": "Diminished",
+  "Augmented": "Augmented"
+}

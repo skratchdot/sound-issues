@@ -1,0 +1,550 @@
+.center {
+  text-align: center;
+}
+
+svg {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.pointer {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.label {
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-s);
+  text-transform: uppercase;
+
+  &.-l {
+    font-size: var(--font-size-m);
+    letter-spacing: var(--letter-spacing-xs);
+  }
+
+  &.-m {
+    font-size: var(--font-size-s);
+    letter-spacing: var(--letter-spacing-s);
+  }
+
+  &.-s {
+    font-size: var(--font-size-xs);
+    letter-spacing: var(--letter-spacing-s);
+  }
+
+  &.-xs {
+    font-size: var(--font-size-xxs);
+    letter-spacing: var(--letter-spacing-s);
+  }
+
+  &.secondary {
+    color: var(--color-font-3);
+  }
+}
+
+.color-1 {
+  color: var(--color-font-1);
+}
+
+.color-2 {
+  color: var(--color-font-2);
+}
+
+.color-3 {
+  color: var(--color-font-3);
+}
+
+.color-4 {
+  color: var(--color-font-4);
+}
+
+.bt {
+  border-top: var(--border-1);
+}
+
+.bb {
+  border-bottom: var(--border-1);
+}
+
+.bl {
+  border-left: var(--border-1);
+}
+
+.br {
+  border-right: var(--border-1);
+}
+
+.posAbso {
+  position: absolute;
+}
+
+.centerAbso {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+// global elements
+
+.modalWrap {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: var(--color-bg);
+  z-index: 1;
+  opacity: 0;
+}
+
+.modal {
+  position: absolute;
+  z-index: 2;
+  background: var(--color-bg-plus-2);
+  border-radius: var(--border-radius-m);
+  width: 98%;
+  max-height: calc(100vh - var(--grid-base-x-2));
+}
+
+.coveringRouterLink {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+// svg icon
+
+.icon {
+  svg {
+    opacity: var(--opacity-icon);
+
+    .active & {
+      opacity: 1;
+    }
+  }
+
+  path {
+    fill: var(--color-icon-base);
+
+    .active & {
+      fill: var(--color-bg-plus-2);
+    }
+  }
+
+  &.active {
+    svg {
+      opacity: 1;
+    }
+
+    path {
+      fill: var(--color-bg-plus-2);
+    }
+  }
+}
+// switch
+
+.switch {
+  position: relative;
+  border: var(--border-contrast-2);
+  border-radius: var(--border-radius-m);
+  width: var(--grid-base-x-11);
+  height: var(--grid-base-x-6);
+
+  &.active,
+  .active & {
+    background: var(--color-highlight);
+    border-color: var(--color-highlight);
+  }
+}
+// rippleJS
+
+.rippleJS .ripple {
+  background: rgba(0,0,0,.3);
+  transform: translateZ(0.1);
+}
+// Pro hint
+
+.proFeature {
+  // display: none !important;
+  pointer-events: none;
+
+  &::after {
+    content: "PRO";
+    position: absolute;
+    right: var(--grid-base-x-2);
+    border-radius: var(--border-radius-m);
+    color: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: var(--letter-spacing-s);
+    text-transform: uppercase;
+    font-size: var(--font-size-xs);
+    background: rgba(var(--color-icon-base-rgb),0.2);
+    padding: var(--grid-base);
+    text-align: center;
+    line-height: var(--font-size-xs);
+  }
+}
+//
+
+.hideThisLater {
+  opacity: 0;
+}
+
+.disableViewport {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+  background: red;
+}
+
+#reducesWheelHeight {
+  height: 1px;
+  top: 0;
+  right: 0;
+  left: 0;
+  position: absolute;
+  // background:red;
+  pointer-events: none;
+  z-index: -1;
+}
+
+// WHEEL
+
+#grabber {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 2000px;
+  height: 2000px;
+}
+
+.centerInWheel {
+  width: 600px;
+  height: 600px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.wheelChords {
+  .chord {
+    width: 90px;
+    height: 90px;
+    text-align: center;
+    line-height: 90px;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-xl);
+    color: var(--color-font-on-wheel);
+    font-family: var(--font-family-condensed);
+    position: absolute;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+    // background: blue;
+    white-space: nowrap;
+
+    &.pos1 {
+      left: 255px;
+      top: 45px;
+    }
+
+    &.pos2 {
+      left: 150px;
+      top: 437px;
+    }
+
+    &.pos3 {
+      left: 437px;
+      top: 150px;
+    }
+
+    &.pos4 {
+      left: 45px;
+      top: 255px;
+    }
+
+    &.pos5 {
+      left: 437px;
+      top: 360px;
+    }
+
+    &.pos6 {
+      left: 150px;
+      top: 73px;
+    }
+
+    &.pos7 {
+      left: 255px;
+      top: 465px;
+    }
+
+    &.pos8 {
+      left: 360px;
+      top: 73px;
+    }
+
+    &.pos9 {
+      left: 73px;
+      top: 360px;
+    }
+
+    &.pos10 {
+      left: 465px;
+      top: 255px;
+    }
+
+    &.pos11 {
+      left: 73px;
+      top: 150px;
+    }
+
+    &.pos12 {
+      left: 360px;
+      top: 437px;
+    }
+  }
+}
+
+.stages .stage {
+  opacity: 0.54;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-weight: 600;
+  font-size: 22px;
+  position: absolute;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  &.stage4 {
+    // IV
+    left: 214px;
+    top: 163px;
+  }
+
+  &.stage1 {
+    // I
+    left: 281px;
+    top: 149px;
+  }
+
+  &.stage5 {
+    // V
+    left: 346px;
+    top: 164px;
+  }
+
+  &.stage2 {
+    // ii
+    left: 395px;
+    top: 214px;
+  }
+
+  &.stage6 {
+    // vi
+    left: 413px;
+    top: 281px;
+  }
+
+  &.stage3 {
+    // iii
+    left: 396px;
+    top: 346px;
+  }
+
+  &.stage7 {
+    // vii
+    left: 346px;
+    top: 395px;
+  }
+}
+// chord names
+
+.chordName {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-font-1);
+  font-family: var(--font-family-condensed);
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+
+  .wheelChords & {
+    text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+    font-size: var(--font-size-xl);
+    line-height: 90px;
+    color: var(--color-font-on-wheel);
+  }
+
+
+  .chordLetter {
+    font-size: var(--font-size-xl);
+    font-family: var(--font-family-main);
+
+    .wheelChords & {
+      padding-right: 3px;
+      font-size: var(--font-size-xxl);
+    }
+  }
+  .chordSex {
+    display: flex;
+  }
+  .flat,
+  .sharp {
+    width: 6px;
+    height: 30px;
+    transform: translateY(-10%);
+
+    .wheelChords & {
+      width: 10px;
+      height: 42px;
+    }
+  }
+  .doubleSharp {
+    width: 8px;
+    height: 8px;
+    transform: translateY(-110%);
+    .wheelChords & {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  // .sharp {
+  //   .wheelChords & {
+  //     width: 10px;
+  //   }
+  // }
+
+  .chordType {
+    margin-left: 2px;
+  }
+  .minor {
+    margin-left: 0;
+  }
+  .maj7 {
+    width: 15px;
+    height: 20px;
+    transform: translateY(-110%);
+  }
+  .aug {
+    font-size: var(--font-size-m);
+    margin-left: 0;
+  }
+  .dimHalf,
+  .dimFull {
+    width: 17px;
+    height: 17px;
+    transform: translateY(-110%);
+  }
+
+  .dom7 {
+    height: 20px;
+    font-size: 90%;
+    transform: translateY(-75%);
+  }
+}
+
+// display minor in small letters
+.minorChordsSmall .chordIsMinor {
+  text-transform: lowercase;
+  .minor {
+    display: none;
+  }
+}
+
+// Staff
+
+.helperLine {
+  position: absolute;
+  right: -3px;
+  left: -3px;
+  height: 1px;
+  background:var(--staff-line-color);
+  z-index: -1;
+  &.middle {
+    top: 5px;
+  }
+  &.below {
+    bottom: 0;
+  }
+}
+
+.staffKeySignature {
+  svg path {
+    fill: var(--note-color);
+  }
+}
+
+#staff {
+  .note svg path {
+    fill: var(--note-color);
+  }
+  .noteWrap:last-of-type .note svg path {
+    fill: var(--staff-line-color);
+  }
+
+  .note svg.flat {
+    width: 6px;
+    height: 20px;
+    left: -10px;
+    top: -8px;
+    max-height: 20px;
+  }
+  .note svg.release,
+  .note svg.doubleSharp,
+  .note svg.sharp {
+    width: 8px;
+    height: 24px;
+    left: -12px;
+    top: -7px;
+    max-height: 24px;
+  }
+}
+
+// scroll
+
+.scrollContainer {
+  overflow: hidden;
+}
+
+// DEV
+//
+// .stage1,
+// .stage4,
+// .stage5 {
+//   background: var(--color-maj);
+// }
+//
+// .stage2,
+// .stage3,
+// .stage6 {
+//   background: var(--color-min);
+// }
+//
+// .stage7 {
+//   background: var(--color-dim);
+// }
