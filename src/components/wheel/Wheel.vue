@@ -6,6 +6,9 @@
     <app-wheel-stages :level="2"/>
     <app-wheel-svg :level="1"/>
     <app-wheel-svg-decker :level="0"/>
+    <div class="startAudioContext label" @click="startAudioContextManually">
+      Start Audio Context manually
+    </div>
   </div>
 </template>
 
@@ -16,6 +19,8 @@ import WheelSvgDecker from './WheelSvgDecker.vue';
 import WheelSvgRoot from './WheelSvgRoot.vue';
 import WheelSvgSeparator from './WheelSvgSeparator.vue';
 import WheelStages from './WheelStages.vue';
+import * as Sounds from '../../functions/sounds';
+import * as StartAudioContext from 'startaudiocontext';
 import {
   setMusicalMode
 } from '../../functions/setMusicalMode';
@@ -36,7 +41,11 @@ export default {
     appWheelStages: WheelStages,
   },
   methods:{
-
+    startAudioContextManually() {
+      StartAudioContext(Sounds.context).then(function(){
+        console.log("context started")
+      })
+    }
   },
   computed: {
 
@@ -68,5 +77,19 @@ export default {
         width: 100%;
         padding-bottom: 100%;
     }
+}
+
+.startAudioContext {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+  text-align: center;
+  background:var(--color-bg-plus-2);
+  padding: 10px;
+  border-radius: 3px;
+  z-index: 999;
+  white-space: nowrap;
+  color: var(--color-font-3);
 }
 </style>

@@ -36,7 +36,6 @@ import {
   easings,
 } from '../../vars';
 import * as Sounds from '../../functions/sounds';
-import * as StartAudioContext from 'startaudiocontext';
 
 export default {
   props: ['level'],
@@ -67,10 +66,6 @@ export default {
     tapChordInWheel(stage,chordName,chordsStructureNames,chordsStructureIntervals){
 
       if (stage && this.settingsBoolean.playbackChordOnTap.active) {
-
-        StartAudioContext(Sounds.context).then(function(){
-          // console.log("context started")
-        })
 
         // play chord with sampler
         Sounds.sampler.triggerAttackRelease(Sounds.makeTonalPlayable(chordsStructureNames,3,true), "2n");
