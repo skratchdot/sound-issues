@@ -2,6 +2,7 @@
   "name": "sound-issues",
   "description": "Circle Of Fifths Sound Issues",
   "version": "1.0.0",
+  "homepage": "https://projects.skratchdot.com/sound-issues",
   "author": "Christian Hengst <buero@christianhengst.de>",
   "license": "All Rights Reserved",
   "private": true,
@@ -13,8 +14,12 @@
     "react-scripts": "1.1.4",
     "tone": "13.1.27"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gh-pages": "^1.2.0"
+  },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",

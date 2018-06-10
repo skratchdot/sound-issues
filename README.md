@@ -22,3 +22,7 @@ npm start
 # build for production with minification
 npm run build
 ```
+
+_NOTE:_ To help troubleshoot, I moved to a simplified: [create-react-app](https://github.com/facebook/create-react-app/)
+
+View demo here: https://projects.skratchdot.com/sound-issues/
