@@ -1,37 +1,37 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
-import Tone from "tone";
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import Tone from 'tone';
 
-import "./styles.css";
+import './styles.css';
 
 class App extends Component {
   constructor(props) {
     super(props);
     const sampler = new Tone.Sampler(
       {
-        C2: "piano_1.[m4a|ogg]",
-        "D#2": "piano_4.[m4a|ogg]",
-        "F#2": "piano_7.[m4a|ogg]",
-        A2: "piano_10.[m4a|ogg]",
-        C3: "piano_13.[m4a|ogg]",
-        "D#3": "piano_16.[m4a|ogg]",
-        "F#3": "piano_19.[m4a|ogg]",
-        A3: "piano_22.[m4a|ogg]",
-        C4: "piano_25.[m4a|ogg]",
-        "D#4": "piano_28.[m4a|ogg]",
-        "F#4": "piano_31.[m4a|ogg]",
-        A4: "piano_34.[m4a|ogg]",
-        C5: "piano_37.[m4a|ogg]",
-        "D#5": "piano_40.[m4a|ogg]",
-        "F#5": "piano_43.[m4a|ogg]",
-        A5: "piano_46.[m4a|ogg]",
-        C6: "piano_49.[m4a|ogg]",
-        "D#6": "piano_52.[m4a|ogg]",
-        "F#6": "piano_55.[m4a|ogg]",
-        A6: "piano_58.[m4a|ogg]"
+        C2: '36.mp3',
+        'D#2': '39.mp3',
+        'F#2': '42.mp3',
+        A2: '45.mp3',
+        C3: '48.mp3',
+        'D#3': '51.mp3',
+        'F#3': '54.mp3',
+        A3: '57.mp3',
+        C4: '60.mp3',
+        'D#4': '63.mp3',
+        'F#4': '66.mp3',
+        A4: '69.mp3',
+        C5: '72.mp3',
+        'D#5': '75.mp3',
+        'F#5': '78.mp3',
+        A5: '81.mp3',
+        C6: '84.mp3',
+        'D#6': '87.mp3',
+        'F#6': '90.mp3',
+        A6: '93.mp3'
       },
       {
-        baseUrl: "./sounds/",
+        baseUrl: './sounds/',
         attack: 0.1,
         release: 0.7,
         onload: () => {
@@ -42,8 +42,8 @@ class App extends Component {
       }
     ).toMaster();
     this.state = {
-      notes: ["C4", "E4", "G4", "B4"],
-      time: "2n",
+      notes: ['C4', 'E4', 'G4', 'B4'],
+      time: '2n',
       soundsLoaded: false,
       sampler
     };
@@ -55,11 +55,11 @@ class App extends Component {
 
   updateNotes = e => {
     this.setState({
-      notes: e.target.value.split(",")
+      notes: e.target.value.split(',')
     });
   };
   setDefaultNotes = () => {
-    this.setState({ notes: ["C4", "E4", "G4", "B4"] });
+    this.setState({ notes: ['C4', 'E4', 'G4', 'B4'] });
   };
   updateTime = e => {
     this.setState({
@@ -72,10 +72,10 @@ class App extends Component {
       <div className="App">
         <h1>Tesing sound-issues</h1>
         <hr />
-        <div>Sounds Loaded: {soundsLoaded ? "true" : "false"}</div>
+        <div>Sounds Loaded: {soundsLoaded ? 'true' : 'false'}</div>
         <hr />
         Notes:
-        <input type="text" value={notes.join(",")} onInput={this.updateNotes} />
+        <input type="text" value={notes.join(',')} onInput={this.updateNotes} />
         <br />
         <button onClick={this.setDefaultNotes}>set default</button>
         <hr />
@@ -89,5 +89,5 @@ class App extends Component {
   }
 }
 
-const rootElement = document.getElementById("root");
+const rootElement = document.getElementById('root');
 ReactDOM.render(<App />, rootElement);
